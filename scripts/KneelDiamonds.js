@@ -4,7 +4,7 @@ import { JewelryStyles } from "./JewelryStyles.js"
 import { Orders } from "./Orders.js"
 import { Metals } from "./Metals.js"
 import { addCustomOrder } from "./database.js"
-
+import { jewelryType } from "./JewelryTypes.js"
 
 document.addEventListener(
     "click",
@@ -34,6 +34,10 @@ export const KneelDiamonds = () => {
             </section>
         </article>
 
+        <article class="choices__type">
+            ${jewelryType()}
+        </article>
+
         <article>
             <button id="orderButton">Create Custom Order</button>
         </article>
@@ -42,6 +46,7 @@ export const KneelDiamonds = () => {
             <h2>Custom Jewelry Orders</h2>
             ${Orders()}
         </article>
+
     `
 }
 

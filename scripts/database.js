@@ -31,10 +31,16 @@ const database = {
             metalId: 3,
             sizeId: 2,
             styleId: 3,
+            typeId: 3, 
             timestamp: 1614659931693
         }
     ], 
     orderBuilder: {}, 
+    types: [
+        { id: 1, name: "Ring", priceX: 1 }, 
+        { id: 2, name: "Earring", priceX: 2 }, 
+        { id: 3, name: "Necklace", priceX: 4 }, 
+    ]
 }
 
 export const getStyles = () => {
@@ -49,6 +55,9 @@ export const getMetals = () => {
 export const getOrders = () => {
     return database.customOrders.map(order => ({...order}))
 }
+export const getTypes = () => { 
+    return database.types.map(type => ({...type}))
+}
 
 // functions to temporally store the order customer built 
 export const setMetal = (id) => {
@@ -59,6 +68,9 @@ export const setSize = (id) => {
 }
 export const setStyle = (id) => {
     database.orderBuilder.styleId = id
+}
+export const setType = (id) => { 
+    database.orderBuilder.typeId = id
 }
 
 // function that will take the "temp order" from order builder and push that order to the custom order array in the database 
