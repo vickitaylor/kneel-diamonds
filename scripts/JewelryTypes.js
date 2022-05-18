@@ -1,4 +1,4 @@
-import { getTypes, setType } from "./database.js"
+import { getTypes, setType } from "./dataAccess.js"
 
 // getting array from state to use in this module 
 const types = getTypes()
@@ -11,10 +11,10 @@ document.addEventListener("change", (event) => {
     })
 
 export const jewelryType = () => { 
-    let html = `<ul> 
+    let html = `<ul class="list"> 
         ${types.map(type => {
-            return `<li>
-                <input type="radio" name="type" value="${type.id}"/> ${type.name}
+            return `<li class="list_items">
+                <input type="radio" name="type" value="${type.id}" /> ${type.name}
             </li>`
         }).join("")
     }
